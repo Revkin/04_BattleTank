@@ -3,6 +3,17 @@
 
 #include "TankPlayerController.h"
 
+
+
+void ATankPlayerController::Tick(float DeltaTime) {
+	
+	Super::Tick(DeltaTime);
+	
+	AimTowardsCrosshair();
+
+
+}
+
 void ATankPlayerController::BeginPlay() {
 
 	Super::BeginPlay();
@@ -21,4 +32,13 @@ ATank* ATankPlayerController::GetControlledTank() const {
 
 	return Cast<ATank>(GetPawn());
 
+}
+
+void ATankPlayerController::AimTowardsCrosshair() {
+
+	if (!GetControlledTank()) { return; }
+
+	//Get World location if linetrace through crosshair
+	//If it hits the landscape
+		//Tell controlled tank to aim at that point
 }

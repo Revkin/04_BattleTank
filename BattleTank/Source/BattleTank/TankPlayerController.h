@@ -27,4 +27,18 @@ private:
 
 	//Gets Aimpoint so the barrel can hit there
 	void AimTowardsCrosshair();
+
+	bool GetSightRayHitLocation(FVector& HitLocation) const;
+
+	UPROPERTY(EditAnywhere)
+	float CrossHairXLocation = 0.5f;
+
+	UPROPERTY(EditAnywhere)
+	float CrossHairYLocation = 0.277f;
+
+	UPROPERTY(EditAnywhere)
+	float LineTraceRange = 1000000;
+
+	bool GetLookDirection(FVector2D ScreenLocation, FVector& LookDirection) const;
+	bool GetLookVectorHitLocation(FVector LookDirection, FVector& HitLocation) const;
 };
